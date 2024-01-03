@@ -11,7 +11,8 @@
         
         </div>
         <div class="rightside">
-          <form action="">
+          <form method="POST" action="{% url 'transaction' %}">
+            {% csrf_token %}
             <h1>CheckOut</h1>
             <h2>Payment Information</h2>
             <p>Cardholder Name</p>
@@ -23,7 +24,7 @@
             <select class="inputbox" name="card_type" id="card_type" required>
               <option value="">--Select a Card Type--</option>
               <option value="Visa">Visa</option>
-              <option value="RuPay">RuPay</option>
+              
               <option value="MasterCard">MasterCard</option>
             </select>
 <div class="expcvv">
@@ -33,6 +34,11 @@
 
             <p class="expcvv_text2">CVV</p>
             <input type="password" class="inputbox" name="cvv" id="cvv" required />
+            <p>appointment_id</p>
+            <input type="text" class="inputbox" name="appointment_id" id="appointment_id"  />
+            <p>patient_id</p>
+            <input type="text" class="inputbox" name="patient_id" id="patient_id"  />
+            
         </div>
             <p></p>
             <button type="submit" class="button">Book Appointment for 20£</button>

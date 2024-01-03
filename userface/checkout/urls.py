@@ -5,6 +5,8 @@ from . import views
 from django.views.generic.base import TemplateView 
 
 urlpatterns = [
-    path('', views.HomePageView.as_view(), name='home'),
+    path('', views.transaction.as_view(), name='transaction'),
+    
+    
     
 ]
